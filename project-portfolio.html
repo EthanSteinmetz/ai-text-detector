@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mock Portfolio Tracker — Ethan Steinmetz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero-inner">
+    <a href="index.html" class="project-hero-back">&#8592; Back to Portfolio</a>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-green">Portfolio Management</span>
+      <span class="badge badge-gray">Project 03</span>
+    </div>
+    <h1>Mock $10,000<br>Portfolio Tracker</h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-top:12px; max-width:560px;">
+      Simulated construction and active management of a diversified $10,000 investment portfolio, tracked over 12 months with risk metrics and benchmark comparison.
+    </p>
+    <div class="project-hero-meta">
+      <span>12-Month Simulation</span>
+      <span class="sep">&bull;</span>
+      <span>Python &amp; Excel</span>
+      <span class="sep">&bull;</span>
+      <span>Educational / Mock Portfolio</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value positive">+11.3%</div>
+      <div class="stat-label">YTD Return</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">+1.5%</div>
+      <div class="stat-label">vs S&amp;P 500</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value gold">0.84</div>
+      <div class="stat-label">Sharpe Ratio</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">1.12</div>
+      <div class="stat-label">Portfolio Beta</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="project-content">
+
+  <!-- OBJECTIVE -->
+  <div class="content-section">
+    <p class="section-label">Objective</p>
+    <h2 class="section-title">Building a Portfolio From Scratch</h2>
+    <p class="section-body">
+      This project simulates the process a portfolio manager or individual investor would follow to construct, monitor, and rebalance a multi-asset portfolio. Starting with a hypothetical $10,000 investment budget, I developed an investment thesis, selected positions, tracked performance, and applied quantitative risk metrics including beta, Sharpe ratio, and correlation analysis.
+    </p>
+    <p class="section-body" style="margin-top: 12px;">
+      The portfolio targets a blend of growth equity, dividend income, broad index exposure, and a small defensive allocation in gold and long-duration treasuries. Historical price data was pulled via the Yahoo Finance API using Python.
+    </p>
+    <div class="insight-box green-box" style="margin-top: 20px;">
+      <p><strong>Portfolio Mandate:</strong> Achieve long-term capital appreciation with moderate risk. Target: outperform the S&amp;P 500 on a risk-adjusted basis over a 12-month simulation period. Maximum single-position concentration: 20%.</p>
+    </div>
+  </div>
+
+  <!-- TOOLS + CONCEPTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="info-card">
+      <h4>Tools Used</h4>
+      <div class="tools-list">
+        <span class="tool-tag">Python (pandas, NumPy)</span>
+        <span class="tool-tag">Yahoo Finance API (yfinance)</span>
+        <span class="tool-tag">Microsoft Excel</span>
+        <span class="tool-tag">Matplotlib / Seaborn</span>
+        <span class="tool-tag">Jupyter Notebook</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h4>Key Finance Concepts</h4>
+      <ul class="concept-list">
+        <li>Asset allocation and diversification across asset classes</li>
+        <li>Beta — measuring portfolio sensitivity to market moves</li>
+        <li>Sharpe ratio — return per unit of risk (volatility)</li>
+        <li>Correlation matrix — identifying diversification benefits</li>
+        <li>Performance attribution — which holdings drove returns</li>
+        <li>Rebalancing — managing drift from target weights</li>
+        <li>Maximum drawdown — understanding downside exposure</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="content-section">
+    <p class="section-label">Methodology</p>
+    <h2 class="section-title">Portfolio Construction Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Define Investment Mandate &amp; Constraints</h4>
+          <p>Established portfolio objectives (capital appreciation), risk tolerance (moderate), time horizon (12 months), and position constraints (max 20% in any single name, minimum 2 positions per asset class).</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Develop Investment Thesis for Each Position</h4>
+          <p>Wrote a one-paragraph rationale for each of the 8 positions, covering the fundamental driver, valuation context, and expected return contribution. No position was included without a clear thesis.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Build the Tracking Model in Python</h4>
+          <p>Used yfinance to pull 12 months of daily adjusted close prices. Calculated daily returns, cumulative returns, and rolling volatility for each position and the aggregate portfolio.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Calculate Risk Metrics</h4>
+          <p>Computed portfolio beta using OLS regression against SPY, annualized Sharpe ratio (using 3-month T-bill as risk-free rate), maximum drawdown, and a full 8x8 correlation matrix across all positions.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Monthly Rebalancing &amp; Performance Review</h4>
+          <p>Simulated monthly rebalancing back to target weights. Tracked performance attribution — how much of the total return came from each position — and compared portfolio performance against the SPY benchmark.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOLDINGS TABLE -->
+  <div class="content-section">
+    <p class="section-label">Portfolio Holdings</p>
+    <h2 class="section-title">Current Positions &amp; Performance</h2>
+    <div class="table-wrap" style="margin-bottom: 24px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Asset Class</th>
+            <th>Target Weight</th>
+            <th>Allocation ($)</th>
+            <th>YTD Return</th>
+            <th>Contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mono-cell"><strong>SPY</strong></td>
+            <td>SPDR S&amp;P 500 ETF</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Broad Equity</span></td>
+            <td class="mono-cell">20%</td>
+            <td class="mono-cell">$2,000</td>
+            <td class="mono-cell positive">+9.8%</td>
+            <td class="mono-cell positive">+196 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>AAPL</strong></td>
+            <td>Apple Inc.</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Large Cap Growth</span></td>
+            <td class="mono-cell">15%</td>
+            <td class="mono-cell">$1,500</td>
+            <td class="mono-cell positive">+14.2%</td>
+            <td class="mono-cell positive">+213 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>MSFT</strong></td>
+            <td>Microsoft Corp.</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Large Cap Growth</span></td>
+            <td class="mono-cell">15%</td>
+            <td class="mono-cell">$1,500</td>
+            <td class="mono-cell positive">+17.6%</td>
+            <td class="mono-cell positive">+264 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>JPM</strong></td>
+            <td>JPMorgan Chase</td>
+            <td><span class="badge badge-gold" style="font-size:0.68rem;">Financials</span></td>
+            <td class="mono-cell">10%</td>
+            <td class="mono-cell">$1,000</td>
+            <td class="mono-cell positive">+11.4%</td>
+            <td class="mono-cell positive">+114 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>BRK.B</strong></td>
+            <td>Berkshire Hathaway B</td>
+            <td><span class="badge badge-gold" style="font-size:0.68rem;">Value / Blend</span></td>
+            <td class="mono-cell">10%</td>
+            <td class="mono-cell">$1,000</td>
+            <td class="mono-cell positive">+8.3%</td>
+            <td class="mono-cell positive">+83 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>AMZN</strong></td>
+            <td>Amazon.com Inc.</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Large Cap Growth</span></td>
+            <td class="mono-cell">10%</td>
+            <td class="mono-cell">$1,000</td>
+            <td class="mono-cell positive">+21.3%</td>
+            <td class="mono-cell positive">+213 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>GLD</strong></td>
+            <td>SPDR Gold Shares</td>
+            <td><span class="badge badge-gray" style="font-size:0.68rem;">Commodities</span></td>
+            <td class="mono-cell">10%</td>
+            <td class="mono-cell">$1,000</td>
+            <td class="mono-cell positive">+13.8%</td>
+            <td class="mono-cell positive">+138 bps</td>
+          </tr>
+          <tr>
+            <td class="mono-cell"><strong>TLT</strong></td>
+            <td>iShares 20+ Yr Treasury</td>
+            <td><span class="badge badge-purple" style="font-size:0.68rem;">Fixed Income</span></td>
+            <td class="mono-cell">10%</td>
+            <td class="mono-cell">$1,000</td>
+            <td class="mono-cell negative">-4.7%</td>
+            <td class="mono-cell negative">-47 bps</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="3"><strong>Portfolio Total</strong></td>
+            <td class="mono-cell">100%</td>
+            <td class="mono-cell">$10,000</td>
+            <td class="mono-cell positive"><strong>+11.3%</strong></td>
+            <td class="mono-cell positive"><strong>+1,130 bps</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="chart-wrap">
+      <div class="chart-title">Portfolio Allocation by Asset Class</div>
+      <canvas id="allocChart" style="max-height: 260px;"></canvas>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title">YTD Return by Position (%)</div>
+      <canvas id="returnChart" style="max-height: 260px;"></canvas>
+    </div>
+  </div>
+
+  <!-- RISK METRICS TABLE -->
+  <div class="content-section">
+    <p class="section-label">Risk Analysis</p>
+    <h2 class="section-title">Portfolio Risk Metrics</h2>
+    <div class="three-col" style="margin-bottom: 24px;">
+      <div class="info-card" style="text-align:center;">
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--green); font-family: 'IBM Plex Mono'; margin-bottom: 4px;">+11.3%</div>
+        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">YTD Total Return</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">vs S&amp;P 500 at +9.8%</div>
+      </div>
+      <div class="info-card" style="text-align:center;">
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--gold); font-family: 'IBM Plex Mono'; margin-bottom: 4px;">0.84</div>
+        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">Sharpe Ratio</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">Risk-free rate: 5.3%</div>
+      </div>
+      <div class="info-card" style="text-align:center;">
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--blue); font-family: 'IBM Plex Mono'; margin-bottom: 4px;">1.12</div>
+        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 4px;">Portfolio Beta</div>
+        <div style="font-size: 0.78rem; color: var(--text-muted);">vs S&amp;P 500 benchmark</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Risk Metric</th>
+            <th>Portfolio</th>
+            <th>S&amp;P 500 (Benchmark)</th>
+            <th>Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Annualized Return</td>
+            <td class="mono-cell positive">+11.3%</td>
+            <td class="mono-cell">+9.8%</td>
+            <td><span class="badge badge-green">Outperforming</span></td>
+          </tr>
+          <tr>
+            <td>Annualized Volatility (Std Dev)</td>
+            <td class="mono-cell">14.2%</td>
+            <td class="mono-cell">12.8%</td>
+            <td><span class="badge badge-gold">Slightly Higher</span></td>
+          </tr>
+          <tr>
+            <td>Sharpe Ratio</td>
+            <td class="mono-cell positive">0.84</td>
+            <td class="mono-cell">0.77</td>
+            <td><span class="badge badge-green">Better Risk-Adj Return</span></td>
+          </tr>
+          <tr>
+            <td>Beta vs S&amp;P 500</td>
+            <td class="mono-cell">1.12</td>
+            <td class="mono-cell">1.00</td>
+            <td><span class="badge badge-gold">Slightly Aggressive</span></td>
+          </tr>
+          <tr>
+            <td>Maximum Drawdown</td>
+            <td class="mono-cell negative">-8.4%</td>
+            <td class="mono-cell negative">-7.1%</td>
+            <td><span class="badge badge-gold">Moderate</span></td>
+          </tr>
+          <tr>
+            <td>Alpha (vs benchmark)</td>
+            <td class="mono-cell positive">+2.1%</td>
+            <td class="mono-cell">—</td>
+            <td><span class="badge badge-green">Positive Alpha</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- WHAT I LEARNED / WHY IT MATTERS -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="learned-section">
+        <p class="section-label">What I Learned</p>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 20px;">Key Takeaways</h2>
+        <div class="learned-grid">
+          <div class="learned-item">
+            <h4>Diversification Has Limits</h4>
+            <p>My "defensive" TLT position dragged on returns. Duration risk is real — bonds don't always hedge equities in a rate-rising environment.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Risk-Adjusted Returns</h4>
+            <p>A higher raw return doesn't always mean better performance. The Sharpe ratio showed our alpha was partly consumed by higher volatility from the growth-heavy tilt.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Attribution Analysis</h4>
+            <p>AMZN contributed 213 bps while TLT cost 47 bps. Performance attribution teaches you what's working — and forces accountability for every position.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Behavioral Discipline</h4>
+            <p>Simulating monthly rebalancing despite short-term noise revealed how hard it is to stick to a process when individual positions are moving violently.</p>
+          </div>
+        </div>
+      </div>
+      <div class="matters-section">
+        <p class="section-label">Why It Matters for Finance</p>
+        <h2 class="section-title" style="font-size: 1.3rem; color: var(--navy); margin-bottom: 16px;">Core to Buy-Side &amp; Wealth Management</h2>
+        <p style="margin-bottom: 14px;">
+          Portfolio construction, risk management, and performance attribution are the fundamental activities of buy-side professionals — portfolio managers, analysts, and risk officers at hedge funds, mutual funds, endowments, and wealth management firms.
+        </p>
+        <p style="margin-bottom: 14px;">
+          This project provides hands-on familiarity with concepts that are often discussed abstractly in finance courses but that matter practically when managing real capital. Understanding the tradeoff between return, volatility, and diversification is prerequisite knowledge for any markets-facing role.
+        </p>
+        <p>
+          It also demonstrates programming proficiency (Python, pandas) for data-driven financial analysis — an increasingly expected skill at leading buy-side shops and trading desks.
+        </p>
+        <div class="disclaimer">
+          This is a mock educational portfolio simulation. All returns are hypothetical and based on historical data. Not investment advice.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJECT NAV -->
+<div class="project-nav">
+  <div class="project-nav-inner">
+    <div class="project-nav-link">
+      <span class="pnl-label">Previous Project</span>
+      <a href="project-apple.html" class="pnl-title">&#8592; Apple Stock Pitch</a>
+    </div>
+    <div class="project-nav-link" style="text-align: right;">
+      <span class="pnl-label">Next Project</span>
+      <a href="project-market.html" class="pnl-title">Market Strategy Dashboard &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; Educational / Mock Projects &bull; Not investment advice</p>
+</footer>
+
+<script>
+new Chart(document.getElementById('allocChart').getContext('2d'), {
+  type: 'doughnut',
+  data: {
+    labels: ['SPY (Index)', 'AAPL', 'MSFT', 'AMZN', 'JPM', 'BRK.B', 'GLD', 'TLT'],
+    datasets: [{
+      data: [20, 15, 15, 10, 10, 10, 10, 10],
+      backgroundColor: [
+        'rgba(29,78,216,0.8)', 'rgba(16,185,129,0.8)', 'rgba(16,185,129,0.5)',
+        'rgba(16,185,129,0.35)', 'rgba(201,162,39,0.8)', 'rgba(201,162,39,0.5)',
+        'rgba(99,132,255,0.6)', 'rgba(148,163,184,0.6)'
+      ],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'right', labels: { font: { family: 'Inter', size: 11 }, padding: 10, boxWidth: 12 } },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}%` } }
+    },
+    cutout: '60%'
+  }
+});
+
+new Chart(document.getElementById('returnChart').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['AMZN', 'MSFT', 'AAPL', 'GLD', 'JPM', 'BRK.B', 'SPY', 'TLT'],
+    datasets: [{
+      label: 'YTD Return (%)',
+      data: [21.3, 17.6, 14.2, 13.8, 11.4, 8.3, 9.8, -4.7],
+      backgroundColor: [21.3,17.6,14.2,13.8,11.4,8.3,9.8,-4.7].map(v => v >= 0 ? 'rgba(16,185,129,0.4)' : 'rgba(239,68,68,0.4)'),
+      borderColor: [21.3,17.6,14.2,13.8,11.4,8.3,9.8,-4.7].map(v => v >= 0 ? 'rgba(16,185,129,0.9)' : 'rgba(239,68,68,0.9)'),
+      borderWidth: 1.5,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}%` } }
+    },
+    scales: {
+      y: {
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { family: 'IBM Plex Mono', size: 11 }, callback: v => v + '%' }
+      },
+      x: { grid: { display: false }, ticks: { font: { family: 'IBM Plex Mono', size: 11 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>

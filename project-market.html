@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Strategy Dashboard — Ethan Steinmetz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero-inner">
+    <a href="index.html" class="project-hero-back">&#8592; Back to Portfolio</a>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-purple">Macro Strategy</span>
+      <span class="badge badge-gray">Project 04</span>
+    </div>
+    <h1>Market Strategy<br>Dashboard</h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-top:12px; max-width:560px;">
+      A macro indicator dashboard tracking yield curve dynamics, credit spreads, equity volatility, and sector positioning signals for a risk-on / risk-off market framework.
+    </p>
+    <div class="project-hero-meta">
+      <span>Q3–Q4 2024 Data</span>
+      <span class="sep">&bull;</span>
+      <span>Python / Plotly / Excel</span>
+      <span class="sep">&bull;</span>
+      <span>Educational / Mock Dashboard</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value gold">4.42%</div>
+      <div class="stat-label">10Y Treasury Yield</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">+18 bps</div>
+      <div class="stat-label">2Y–10Y Spread</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">18.3</div>
+      <div class="stat-label">VIX (Fear Index)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">Risk-On</div>
+      <div class="stat-label">Market Bias Signal</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="project-content">
+
+  <!-- OBJECTIVE -->
+  <div class="content-section">
+    <p class="section-label">Objective</p>
+    <h2 class="section-title">Why a Macro Dashboard?</h2>
+    <p class="section-body">
+      Before positioning in equities, a strategist or S&amp;T professional needs to understand the macro environment. Interest rates, credit conditions, volatility, and sector momentum all feed into the risk-on / risk-off framework that governs short-term market behavior and medium-term asset allocation strategy.
+    </p>
+    <p class="section-body" style="margin-top: 12px;">
+      This project involved identifying the most relevant macro indicators, sourcing the data, building a Python-based dashboard using Plotly/Dash for visualization, and interpreting the signals to generate a sector rotation view and overall market bias recommendation.
+    </p>
+    <div class="insight-box" style="margin-top: 20px;">
+      <p><strong>Dashboard Signal (Q4 2024):</strong> The 2Y–10Y yield curve has uninverted (+18 bps), VIX has normalized below 20, and IG credit spreads are tight at 85 bps — collectively pointing to a <strong>Risk-On</strong> environment. Recommended positioning: Overweight Financials, Technology, and Industrials; Underweight Utilities and Long-Duration Bonds.</p>
+    </div>
+  </div>
+
+  <!-- TOOLS + CONCEPTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="info-card">
+      <h4>Tools Used</h4>
+      <div class="tools-list">
+        <span class="tool-tag">Python (Dash, Plotly)</span>
+        <span class="tool-tag">pandas / NumPy</span>
+        <span class="tool-tag">FRED API (Federal Reserve)</span>
+        <span class="tool-tag">Yahoo Finance API</span>
+        <span class="tool-tag">Microsoft Excel</span>
+        <span class="tool-tag">Bloomberg Academic</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h4>Key Finance Concepts</h4>
+      <ul class="concept-list">
+        <li>Yield curve shape — normal, inverted, uninverting dynamics</li>
+        <li>Credit spreads — IG vs HY spread as risk appetite indicator</li>
+        <li>VIX (CBOE Volatility Index) — implied volatility and fear gauge</li>
+        <li>Fed Funds Rate and its effect on equity valuations</li>
+        <li>Sector rotation — cyclical vs defensive asset positioning</li>
+        <li>Risk-on / risk-off framework for asset allocation</li>
+        <li>Economic cycle indicators — ISM, PMI, jobless claims</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="content-section">
+    <p class="section-label">Methodology</p>
+    <h2 class="section-title">Dashboard Build Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Select the Indicator Framework</h4>
+          <p>Identified 12 key macro variables organized into 4 categories: Rates (Treasury yields, Fed Funds, TIPS breakevens), Credit (IG spreads, HY spreads, CDX), Equity (VIX, AAII sentiment, put/call ratio), and Growth (ISM Manufacturing, Jobless Claims, PMI).</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Build the Data Pipeline</h4>
+          <p>Connected to the FRED API for Treasury yields and credit data; Yahoo Finance API for equity market data and sector ETF prices. Automated the data pull into a pandas DataFrame, updating daily.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Design the Signal Framework</h4>
+          <p>Built a rule-based signal engine: each indicator is scored +1 (bullish), 0 (neutral), or -1 (bearish) based on predefined thresholds. Aggregate score determines the overall Risk-On / Neutral / Risk-Off bias.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Build the Plotly Dashboard</h4>
+          <p>Created a multi-panel Plotly Dash application with time-series charts for each indicator category, a sector heatmap, and a summary scorecard. Color-coded signaling (green/yellow/red) for intuitive readability.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Derive Sector Rotation Recommendations</h4>
+          <p>Mapped the aggregate signal to a sector rotation framework: at what stage of the economic cycle are we, and what sectors historically outperform at that stage? Generated a formal market strategy note summarizing the view.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RATES TABLE -->
+  <div class="content-section">
+    <p class="section-label">Sample Dashboard Data</p>
+    <h2 class="section-title">Macro Indicator Scorecard (Q4 2024)</h2>
+    <div class="table-wrap" style="margin-bottom: 24px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Category</th>
+            <th>Current Level</th>
+            <th>Prior Month</th>
+            <th>Change</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2Y Treasury Yield</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Rates</span></td>
+            <td class="mono-cell">4.24%</td>
+            <td class="mono-cell">4.47%</td>
+            <td class="mono-cell positive">-23 bps</td>
+            <td><span class="badge badge-green">Bullish</span></td>
+          </tr>
+          <tr>
+            <td>10Y Treasury Yield</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Rates</span></td>
+            <td class="mono-cell">4.42%</td>
+            <td class="mono-cell">4.38%</td>
+            <td class="mono-cell negative">+4 bps</td>
+            <td><span class="badge badge-gold">Neutral</span></td>
+          </tr>
+          <tr>
+            <td>2Y–10Y Spread</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Rates</span></td>
+            <td class="mono-cell">+18 bps</td>
+            <td class="mono-cell">-9 bps</td>
+            <td class="mono-cell positive">Uninverted</td>
+            <td><span class="badge badge-green">Bullish</span></td>
+          </tr>
+          <tr>
+            <td>IG Credit Spread (OAS)</td>
+            <td><span class="badge badge-gold" style="font-size:0.68rem;">Credit</span></td>
+            <td class="mono-cell">85 bps</td>
+            <td class="mono-cell">92 bps</td>
+            <td class="mono-cell positive">-7 bps</td>
+            <td><span class="badge badge-green">Bullish</span></td>
+          </tr>
+          <tr>
+            <td>HY Credit Spread (OAS)</td>
+            <td><span class="badge badge-gold" style="font-size:0.68rem;">Credit</span></td>
+            <td class="mono-cell">318 bps</td>
+            <td class="mono-cell">341 bps</td>
+            <td class="mono-cell positive">-23 bps</td>
+            <td><span class="badge badge-green">Bullish</span></td>
+          </tr>
+          <tr>
+            <td>VIX (Volatility Index)</td>
+            <td><span class="badge badge-purple" style="font-size:0.68rem;">Equity</span></td>
+            <td class="mono-cell">18.3</td>
+            <td class="mono-cell">22.1</td>
+            <td class="mono-cell positive">-3.8 pts</td>
+            <td><span class="badge badge-green">Bullish</span></td>
+          </tr>
+          <tr>
+            <td>ISM Manufacturing PMI</td>
+            <td><span class="badge badge-gray" style="font-size:0.68rem;">Growth</span></td>
+            <td class="mono-cell">49.3</td>
+            <td class="mono-cell">47.8</td>
+            <td class="mono-cell positive">+1.5</td>
+            <td><span class="badge badge-gold">Neutral</span></td>
+          </tr>
+          <tr>
+            <td>Initial Jobless Claims</td>
+            <td><span class="badge badge-gray" style="font-size:0.68rem;">Growth</span></td>
+            <td class="mono-cell">213K</td>
+            <td class="mono-cell">228K</td>
+            <td class="mono-cell positive">-15K</td>
+            <td><span class="badge badge-green">Bullish</span></td>
+          </tr>
+          <tr>
+            <td>10Y TIPS Breakeven (Inflation)</td>
+            <td><span class="badge badge-blue" style="font-size:0.68rem;">Rates</span></td>
+            <td class="mono-cell">2.28%</td>
+            <td class="mono-cell">2.31%</td>
+            <td class="mono-cell positive">-3 bps</td>
+            <td><span class="badge badge-gold">Neutral</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="chart-wrap">
+        <div class="chart-title">Sector YTD Performance (SPDR ETFs, %)</div>
+        <canvas id="sectorChart" style="max-height: 300px;"></canvas>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">Signal Scorecard (Bullish / Neutral / Bearish)</div>
+        <canvas id="signalChart" style="max-height: 300px;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTOR ROTATION TABLE -->
+  <div class="content-section">
+    <p class="section-label">Positioning Recommendation</p>
+    <h2 class="section-title">Sector Rotation View</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th>ETF</th>
+            <th>YTD Return</th>
+            <th>Macro Rationale</th>
+            <th>Recommended Weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Financials</strong></td>
+            <td class="mono-cell">XLF</td>
+            <td class="mono-cell positive">+18.4%</td>
+            <td>Curve uninversion, strong earnings cycle</td>
+            <td><span class="badge badge-green">Overweight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Technology</strong></td>
+            <td class="mono-cell">XLK</td>
+            <td class="mono-cell positive">+21.2%</td>
+            <td>AI capex cycle, rate peak = multiple expansion</td>
+            <td><span class="badge badge-green">Overweight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Industrials</strong></td>
+            <td class="mono-cell">XLI</td>
+            <td class="mono-cell positive">+14.7%</td>
+            <td>Manufacturing recovery, infrastructure spend</td>
+            <td><span class="badge badge-green">Overweight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Consumer Discretionary</strong></td>
+            <td class="mono-cell">XLY</td>
+            <td class="mono-cell positive">+10.3%</td>
+            <td>Resilient consumer, rate easing supports spending</td>
+            <td><span class="badge badge-blue">Market Weight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Energy</strong></td>
+            <td class="mono-cell">XLE</td>
+            <td class="mono-cell positive">+7.8%</td>
+            <td>Supply/demand balanced, geopolitical premium</td>
+            <td><span class="badge badge-blue">Market Weight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Health Care</strong></td>
+            <td class="mono-cell">XLV</td>
+            <td class="mono-cell positive">+5.2%</td>
+            <td>Defensive characteristics less valued in risk-on</td>
+            <td><span class="badge badge-blue">Market Weight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Utilities</strong></td>
+            <td class="mono-cell">XLU</td>
+            <td class="mono-cell negative">-2.1%</td>
+            <td>Rate-sensitive, losing relative attractiveness</td>
+            <td><span class="badge badge-red">Underweight</span></td>
+          </tr>
+          <tr>
+            <td><strong>Consumer Staples</strong></td>
+            <td class="mono-cell">XLP</td>
+            <td class="mono-cell positive">+3.4%</td>
+            <td>Defensive, underperforms in cyclical recovery</td>
+            <td><span class="badge badge-red">Underweight</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- WHAT I LEARNED / WHY IT MATTERS -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="learned-section">
+        <p class="section-label">What I Learned</p>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 20px;">Key Takeaways</h2>
+        <div class="learned-grid">
+          <div class="learned-item">
+            <h4>Yield Curve as a Leading Indicator</h4>
+            <p>The 2Y–10Y spread uninverting historically precedes equity rallies — but also sometimes signals a recession has already arrived. Context matters enormously.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Credit Spreads Anticipate Equities</h4>
+            <p>IG and HY spreads often tighten before equities rally. Building a cross-asset view rather than watching equities in isolation was a major learning.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Data Pipeline Skills</h4>
+            <p>Connecting to APIs (FRED, Yahoo Finance), cleaning data, and building a reproducible pipeline is as important as the analysis itself.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Rules vs. Judgment</h4>
+            <p>Rule-based signals provide discipline but can lag during inflection points. Good macro analysis blends quantitative signals with qualitative judgment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="matters-section">
+        <p class="section-label">Why It Matters for Finance</p>
+        <h2 class="section-title" style="font-size: 1.3rem; color: var(--navy); margin-bottom: 16px;">Essential for S&amp;T and Macro Strategy</h2>
+        <p style="margin-bottom: 14px;">
+          Sales and Trading professionals — especially on rates, credit, and equity desks — need to contextualize every trade within the macro environment. A buy or sell decision in isolation misses the broader picture; understanding where yields are headed, how tight credit spreads are, and what the yield curve shape implies for bank earnings fundamentally shapes positioning.
+        </p>
+        <p style="margin-bottom: 14px;">
+          Macro strategy roles at hedge funds, banks (global markets strategy), and asset managers explicitly require this kind of cross-asset thinking and the ability to synthesize diverse data into a coherent market view.
+        </p>
+        <p>
+          Building this dashboard also taught me the data engineering skills increasingly required for quantitative roles: API integration, data pipeline construction, and interactive visualization.
+        </p>
+        <div class="disclaimer">
+          This is a mock educational dashboard. Data represents a simulated Q4 2024 snapshot for learning purposes. Not investment advice.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJECT NAV -->
+<div class="project-nav">
+  <div class="project-nav-inner">
+    <div class="project-nav-link">
+      <span class="pnl-label">Previous Project</span>
+      <a href="project-portfolio.html" class="pnl-title">&#8592; Mock Portfolio Tracker</a>
+    </div>
+    <div class="project-nav-link" style="text-align: right;">
+      <span class="pnl-label">Next Project</span>
+      <a href="project-dcf.html" class="pnl-title">DCF Valuation Model &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; Educational / Mock Projects &bull; Not investment advice</p>
+</footer>
+
+<script>
+new Chart(document.getElementById('sectorChart').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['XLK', 'XLF', 'XLI', 'XLY', 'XLE', 'XLV', 'XLP', 'XLU'],
+    datasets: [{
+      label: 'YTD Return (%)',
+      data: [21.2, 18.4, 14.7, 10.3, 7.8, 5.2, 3.4, -2.1],
+      backgroundColor: [21.2,18.4,14.7,10.3,7.8,5.2,3.4,-2.1].map(v => v >= 5 ? 'rgba(16,185,129,0.5)' : v >= 0 ? 'rgba(201,162,39,0.5)' : 'rgba(239,68,68,0.5)'),
+      borderColor: [21.2,18.4,14.7,10.3,7.8,5.2,3.4,-2.1].map(v => v >= 5 ? 'rgba(16,185,129,0.9)' : v >= 0 ? 'rgba(201,162,39,0.9)' : 'rgba(239,68,68,0.9)'),
+      borderWidth: 1.5,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.parsed.y}%` } } },
+    scales: {
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: 'IBM Plex Mono', size: 11 }, callback: v => v + '%' } },
+      x: { grid: { display: false }, ticks: { font: { family: 'IBM Plex Mono', size: 11 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('signalChart').getContext('2d'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Bullish Signals', 'Neutral Signals', 'Bearish Signals'],
+    datasets: [{
+      data: [6, 3, 0],
+      backgroundColor: ['rgba(16,185,129,0.7)', 'rgba(201,162,39,0.7)', 'rgba(239,68,68,0.7)'],
+      borderColor: ['rgba(16,185,129,1)', 'rgba(201,162,39,1)', 'rgba(239,68,68,1)'],
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 12 }, padding: 16, boxWidth: 14 } },
+      tooltip: { callbacks: { label: c => ` ${c.label}: ${c.parsed} of 9` } }
+    },
+    cutout: '55%'
+  }
+});
+</script>
+</body>
+</html>

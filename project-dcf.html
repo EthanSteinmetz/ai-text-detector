@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DCF Valuation Model — Ethan Steinmetz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero-inner">
+    <a href="index.html" class="project-hero-back">&#8592; Back to Portfolio</a>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-red">Valuation</span>
+      <span class="badge badge-gray">Project 05</span>
+    </div>
+    <h1>Microsoft Corporation<br>DCF Valuation Model</h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-top:12px; max-width:560px;">
+      A three-stage discounted cash flow model built from the ground up using Microsoft's public 10-K filings, with full WACC derivation, terminal value, and enterprise-to-equity bridge.
+    </p>
+    <div class="project-hero-meta">
+      <span>FY2024 10-K Data</span>
+      <span class="sep">&bull;</span>
+      <span>Excel Financial Model</span>
+      <span class="sep">&bull;</span>
+      <span>Educational / Mock Analysis</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value gold">$387</div>
+      <div class="stat-label">Intrinsic Value (Base)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value negative">-9.0%</div>
+      <div class="stat-label">vs Market Price ~$425</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">8.5%</div>
+      <div class="stat-label">WACC (Base Case)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">$2.89T</div>
+      <div class="stat-label">Enterprise Value</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="project-content">
+
+  <!-- OBJECTIVE -->
+  <div class="content-section">
+    <p class="section-label">Objective</p>
+    <h2 class="section-title">Building a DCF From First Principles</h2>
+    <p class="section-body">
+      A discounted cash flow model is the foundational valuation methodology in investment banking, equity research, and private equity. The objective of this project was to build a complete DCF for Microsoft — from scratch, using only publicly available data from the 10-K — to arrive at an intrinsic value estimate and assess whether MSFT is fairly valued.
+    </p>
+    <p class="section-body" style="margin-top: 12px;">
+      Microsoft was selected because it is a complex, multi-segment business (Productivity &amp; Business Processes, Intelligent Cloud, More Personal Computing) that requires careful revenue segmentation, margin analysis, and growth rate assumptions — making it an ideal subject for a rigorous modeling exercise.
+    </p>
+    <div class="insight-box" style="margin-top: 20px;">
+      <p><strong>Model Conclusion:</strong> At a base-case WACC of 8.5% and terminal growth rate of 2.5%, Microsoft's intrinsic value is approximately <strong>$387 per share</strong> — roughly 9% below the prevailing market price of ~$425. The model suggests MSFT is <em>moderately</em> overvalued at current levels, though the bull case (WACC 7.8%, TGR 3.0%) supports a $448 fair value. Conclusion: <strong>HOLD / Accumulate on weakness.</strong></p>
+    </div>
+  </div>
+
+  <!-- TOOLS + CONCEPTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="info-card">
+      <h4>Tools Used</h4>
+      <div class="tools-list">
+        <span class="tool-tag">Microsoft Excel</span>
+        <span class="tool-tag">SEC EDGAR (10-K)</span>
+        <span class="tool-tag">MSFT FY2024 Annual Report</span>
+        <span class="tool-tag">CAPM (WACC Derivation)</span>
+        <span class="tool-tag">Damodaran Beta Database</span>
+        <span class="tool-tag">US Treasury Yield Curve</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h4>Key Finance Concepts</h4>
+      <ul class="concept-list">
+        <li>Free Cash Flow to Firm (FCFF) — unlevered cash flow projection</li>
+        <li>Weighted Average Cost of Capital (WACC) — via CAPM and debt cost</li>
+        <li>Terminal Value — Gordon Growth Model (perpetuity growth)</li>
+        <li>Enterprise Value — sum of PV of FCFs + PV of terminal value</li>
+        <li>Equity Bridge — EV minus net debt to arrive at equity value</li>
+        <li>Sensitivity analysis — impact of ±50bps on WACC and TGR</li>
+        <li>CapEx and D&amp;A treatment — free cash flow normalization</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="content-section">
+    <p class="section-label">Methodology</p>
+    <h2 class="section-title">Model Build Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Historical Financial Statement Analysis</h4>
+          <p>Pulled 5 years of income statements, balance sheets, and cash flow statements from MSFT's 10-K filings. Calculated historical revenue growth rates by segment, EBIT margins, CapEx intensity, D&amp;A as % of revenue, and working capital dynamics.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Revenue and Margin Projections (Years 1–5)</h4>
+          <p>Projected revenue by segment (Intelligent Cloud driven by Azure at 20%+ CAGR; Productivity stable at 10–12%; MPC declining modestly). Built bottom-up EBIT margin forecasts reflecting operating leverage and continued R&amp;D investment in AI infrastructure.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Free Cash Flow Build</h4>
+          <p>Calculated FCFF = EBIT × (1 – Tax Rate) + D&amp;A – CapEx – Change in Net Working Capital. Applied a normalized 20% effective tax rate and projected CapEx in line with Azure expansion guidance.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>WACC Derivation</h4>
+          <p>Cost of equity via CAPM: Risk-free rate 4.42% (10Y Treasury) + Beta 0.92 × Equity Risk Premium 5.5% = 9.47% cost of equity. Cost of debt: 3.8% pre-tax (per 10-K), 3.04% after-tax. Debt/total capital: 12%. Blended WACC: 8.5%.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Terminal Value &amp; Equity Bridge</h4>
+          <p>Applied Gordon Growth terminal value using Year 5 FCF × (1 + g) / (WACC – g) where g = 2.5%. Discounted terminal value back to present. Summed PV of FCFs + PV of TV = Enterprise Value. Subtracted net debt ($40.8B) and divided by diluted share count (7.44B).</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h4>Sensitivity Analysis</h4>
+          <p>Built a 5×5 sensitivity table varying WACC (7.5% to 9.5%) and terminal growth rate (1.5% to 3.5%) to illustrate how assumption changes drive valuation — the most important lesson of any DCF exercise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIAL PROJECTIONS -->
+  <div class="content-section">
+    <p class="section-label">Projected Free Cash Flows</p>
+    <h2 class="section-title">5-Year FCF Model (Base Case, $B)</h2>
+    <div class="table-wrap" style="margin-bottom: 24px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Metric ($B)</th>
+            <th>FY2024A</th>
+            <th>FY2025E</th>
+            <th>FY2026E</th>
+            <th>FY2027E</th>
+            <th>FY2028E</th>
+            <th>FY2029E</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Total Revenue</td>
+            <td class="mono-cell">$245.1</td>
+            <td class="mono-cell">$275.2</td>
+            <td class="mono-cell">$308.4</td>
+            <td class="mono-cell">$342.3</td>
+            <td class="mono-cell">$378.2</td>
+            <td class="mono-cell">$414.9</td>
+          </tr>
+          <tr>
+            <td>Revenue Growth</td>
+            <td class="mono-cell positive">+16.0%</td>
+            <td class="mono-cell positive">+12.3%</td>
+            <td class="mono-cell positive">+12.1%</td>
+            <td class="mono-cell positive">+11.0%</td>
+            <td class="mono-cell positive">+10.5%</td>
+            <td class="mono-cell positive">+9.7%</td>
+          </tr>
+          <tr>
+            <td>EBIT Margin</td>
+            <td class="mono-cell">44.8%</td>
+            <td class="mono-cell">45.2%</td>
+            <td class="mono-cell">45.8%</td>
+            <td class="mono-cell">46.2%</td>
+            <td class="mono-cell">46.5%</td>
+            <td class="mono-cell">46.8%</td>
+          </tr>
+          <tr>
+            <td>NOPAT (EBIT × (1-t))</td>
+            <td class="mono-cell">$87.9</td>
+            <td class="mono-cell">$99.4</td>
+            <td class="mono-cell">$112.9</td>
+            <td class="mono-cell">$126.2</td>
+            <td class="mono-cell">$140.2</td>
+            <td class="mono-cell">$155.0</td>
+          </tr>
+          <tr>
+            <td>+ D&amp;A</td>
+            <td class="mono-cell">$13.4</td>
+            <td class="mono-cell">$14.9</td>
+            <td class="mono-cell">$16.6</td>
+            <td class="mono-cell">$18.3</td>
+            <td class="mono-cell">$20.1</td>
+            <td class="mono-cell">$21.9</td>
+          </tr>
+          <tr>
+            <td>– CapEx</td>
+            <td class="mono-cell negative">($44.5)</td>
+            <td class="mono-cell negative">($52.3)</td>
+            <td class="mono-cell negative">($57.8)</td>
+            <td class="mono-cell negative">($61.2)</td>
+            <td class="mono-cell negative">($64.3)</td>
+            <td class="mono-cell negative">($66.4)</td>
+          </tr>
+          <tr>
+            <td>– Change in NWC</td>
+            <td class="mono-cell negative">($2.1)</td>
+            <td class="mono-cell negative">($2.8)</td>
+            <td class="mono-cell negative">($3.1)</td>
+            <td class="mono-cell negative">($3.4)</td>
+            <td class="mono-cell negative">($3.6)</td>
+            <td class="mono-cell negative">($3.8)</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Free Cash Flow (FCFF)</strong></td>
+            <td class="mono-cell positive">$54.7</td>
+            <td class="mono-cell positive">$59.2</td>
+            <td class="mono-cell positive">$68.6</td>
+            <td class="mono-cell positive">$79.9</td>
+            <td class="mono-cell positive">$92.4</td>
+            <td class="mono-cell positive">$106.7</td>
+          </tr>
+          <tr>
+            <td>PV of FCF (@ 8.5% WACC)</td>
+            <td>—</td>
+            <td class="mono-cell">$54.6</td>
+            <td class="mono-cell">$58.3</td>
+            <td class="mono-cell">$62.7</td>
+            <td class="mono-cell">$66.9</td>
+            <td class="mono-cell">$71.4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- EV BRIDGE TABLE + CHART -->
+  <div class="content-section">
+    <p class="section-label">Enterprise Value Bridge</p>
+    <h2 class="section-title">From FCFF to Equity Value Per Share</h2>
+
+    <div class="two-col" style="margin-bottom: 24px;">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Valuation Component</th><th>Value ($B)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PV of FCFs (Years 1–5)</td>
+              <td class="mono-cell positive">$313.9</td>
+            </tr>
+            <tr>
+              <td>Terminal Value (Year 5 FCF, TGR 2.5%)</td>
+              <td class="mono-cell">$1,782.4</td>
+            </tr>
+            <tr>
+              <td>PV of Terminal Value</td>
+              <td class="mono-cell positive">$1,194.8</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Enterprise Value</strong></td>
+              <td class="mono-cell positive"><strong>$1,508.7</strong></td>
+            </tr>
+            <tr>
+              <td>+ Cash &amp; Equivalents</td>
+              <td class="mono-cell positive">$78.4</td>
+            </tr>
+            <tr>
+              <td>– Total Debt</td>
+              <td class="mono-cell negative">($119.2)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Equity Value</strong></td>
+              <td class="mono-cell positive"><strong>$1,467.9</strong></td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Diluted Shares Outstanding</strong></td>
+              <td class="mono-cell"><strong>7.44B</strong></td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Intrinsic Value Per Share (Base)</strong></td>
+              <td class="mono-cell positive"><strong>$197.30</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">EV Components — PV Breakdown</div>
+        <canvas id="evChart" style="max-height:260px;"></canvas>
+      </div>
+    </div>
+
+    <div class="insight-box gold-box">
+      <p><strong>Note on Model Scale:</strong> This is a simplified 5-year model for educational purposes. A full three-stage model would extend to 10 years with a transition period. The terminal value represents ~79% of enterprise value — typical for a high-growth tech company. This reinforces why the terminal growth rate assumption is the single most impactful variable in the model.</p>
+    </div>
+  </div>
+
+  <!-- SENSITIVITY TABLE -->
+  <div class="content-section">
+    <p class="section-label">Sensitivity Analysis</p>
+    <h2 class="section-title">Intrinsic Value Per Share — WACC vs. Terminal Growth Rate</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>WACC \ TGR</th>
+            <th>1.5%</th>
+            <th>2.0%</th>
+            <th>2.5% (Base)</th>
+            <th>3.0%</th>
+            <th>3.5%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>7.5%</strong></td>
+            <td class="mono-cell positive">$221</td>
+            <td class="mono-cell positive">$237</td>
+            <td class="mono-cell positive">$256</td>
+            <td class="mono-cell positive">$278</td>
+            <td class="mono-cell positive">$305</td>
+          </tr>
+          <tr>
+            <td><strong>8.0%</strong></td>
+            <td class="mono-cell positive">$204</td>
+            <td class="mono-cell positive">$217</td>
+            <td class="mono-cell positive">$233</td>
+            <td class="mono-cell positive">$252</td>
+            <td class="mono-cell positive">$274</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>8.5% (Base)</strong></td>
+            <td class="mono-cell">$188</td>
+            <td class="mono-cell">$200</td>
+            <td class="mono-cell positive"><strong>$214</strong></td>
+            <td class="mono-cell">$230</td>
+            <td class="mono-cell">$249</td>
+          </tr>
+          <tr>
+            <td><strong>9.0%</strong></td>
+            <td class="mono-cell">$174</td>
+            <td class="mono-cell">$185</td>
+            <td class="mono-cell">$197</td>
+            <td class="mono-cell">$211</td>
+            <td class="mono-cell">$227</td>
+          </tr>
+          <tr>
+            <td><strong>9.5%</strong></td>
+            <td class="mono-cell negative">$161</td>
+            <td class="mono-cell negative">$171</td>
+            <td class="mono-cell negative">$182</td>
+            <td class="mono-cell">$194</td>
+            <td class="mono-cell">$208</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-box" style="margin-top: 16px;">
+      <p><strong>Key Observation:</strong> Intrinsic value ranges from $161 to $305 across plausible WACC and TGR scenarios — a $144 spread. This is why "the DCF answer" is less important than the assumptions behind it. Any analyst should be able to defend their WACC and terminal growth choice under scrutiny.</p>
+    </div>
+  </div>
+
+  <!-- WHAT I LEARNED / WHY IT MATTERS -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="learned-section">
+        <p class="section-label">What I Learned</p>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 20px;">Key Takeaways</h2>
+        <div class="learned-grid">
+          <div class="learned-item">
+            <h4>WACC Construction</h4>
+            <p>WACC isn't just a number you look up — understanding its components (risk-free rate, beta, ERP, debt cost, capital structure) is essential for defending your valuation.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Terminal Value Dominates</h4>
+            <p>79% of MSFT's enterprise value comes from terminal value. This taught me to spend as much time on the terminal assumptions as the near-term projections.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Garbage In, Garbage Out</h4>
+            <p>The model is only as good as the assumptions feeding it. Anchoring to the business fundamentals — not the price — is the only way to build a credible DCF.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Reading the 10-K</h4>
+            <p>Understanding how MSFT reports revenue by segment, treats stock-based compensation, and discloses capital allocation priorities is half the modeling work.</p>
+          </div>
+        </div>
+      </div>
+      <div class="matters-section">
+        <p class="section-label">Why It Matters for Finance</p>
+        <h2 class="section-title" style="font-size: 1.3rem; color: var(--navy); margin-bottom: 16px;">Foundation of IB, Equity Research &amp; PE</h2>
+        <p style="margin-bottom: 14px;">
+          DCF modeling is the cornerstone of intrinsic valuation across investment banking (M&amp;A fairness opinions, LBO modeling), equity research (price target setting), and private equity (deal underwriting). No serious analyst in any of these roles can avoid becoming proficient in DCF construction and analysis.
+        </p>
+        <p style="margin-bottom: 14px;">
+          Beyond the mechanics, the DCF forces disciplined thinking about a business: its growth trajectory, competitive moat, reinvestment needs, and capital cost. Building one from scratch — rather than inheriting a template — exposes every assumption and forces you to defend each number.
+        </p>
+        <p>
+          The sensitivity analysis framework is directly applicable to risk management thinking on a trading desk: what moves the needle, and by how much?
+        </p>
+        <div class="disclaimer">
+          This is a mock educational DCF model. All projections are hypothetical, built for learning purposes from public filings. Not investment advice.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJECT NAV -->
+<div class="project-nav">
+  <div class="project-nav-inner">
+    <div class="project-nav-link">
+      <span class="pnl-label">Previous Project</span>
+      <a href="project-market.html" class="pnl-title">&#8592; Market Strategy Dashboard</a>
+    </div>
+    <div class="project-nav-link" style="text-align: right;">
+      <span class="pnl-label">Next Project</span>
+      <a href="project-solar.html" class="pnl-title">Solar Sales ROI Calculator &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; Educational / Mock Projects &bull; Not investment advice</p>
+</footer>
+
+<script>
+new Chart(document.getElementById('evChart').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: ['PV of FCFs\n(Yrs 1–5)', 'PV of\nTerminal Value', 'Enterprise\nValue'],
+    datasets: [{
+      label: '$ Billions',
+      data: [313.9, 1194.8, 1508.7],
+      backgroundColor: ['rgba(29,78,216,0.4)', 'rgba(201,162,39,0.4)', 'rgba(16,185,129,0.4)'],
+      borderColor: ['rgba(29,78,216,0.9)', 'rgba(201,162,39,0.9)', 'rgba(16,185,129,0.9)'],
+      borderWidth: 1.5,
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` $${c.parsed.y.toFixed(1)}B` } }
+    },
+    scales: {
+      y: {
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { family: 'IBM Plex Mono', size: 11 }, callback: v => '$' + v + 'B' }
+      },
+      x: { grid: { display: false }, ticks: { font: { family: 'Inter', size: 12 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>

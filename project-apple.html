@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple Stock Pitch — Ethan Steinmetz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero-inner">
+    <a href="index.html" class="project-hero-back">&#8592; Back to Portfolio</a>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-gold">Stock Pitch</span>
+      <span class="badge badge-gray">Project 02</span>
+    </div>
+    <h1>Apple Inc. (AAPL)<br>Buy-Side Stock Pitch</h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-top:12px; max-width:560px;">
+      A full equity research note with DCF valuation, comparable company analysis, and three-scenario price target. Rating: <strong style="color: #10b981;">BUY</strong>
+    </p>
+    <div class="project-hero-meta">
+      <span>FY2024 Analysis</span>
+      <span class="sep">&bull;</span>
+      <span>Excel &amp; DCF Model</span>
+      <span class="sep">&bull;</span>
+      <span>Educational / Mock Research</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value gold">BUY</div>
+      <div class="stat-label">Rating</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">$198</div>
+      <div class="stat-label">Base Case Price Target</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">+8.8%</div>
+      <div class="stat-label">Implied Upside</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">28.4x</div>
+      <div class="stat-label">FY2024E P/E</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="project-content">
+
+  <!-- OBJECTIVE -->
+  <div class="content-section">
+    <p class="section-label">Objective</p>
+    <h2 class="section-title">Investment Thesis</h2>
+    <p class="section-body">
+      This project replicates the format and analytical rigor of a buy-side equity research note. The goal was to form an independent investment view on Apple by synthesizing qualitative business analysis, financial modeling, and relative valuation — ultimately arriving at a price target and investment rating.
+    </p>
+    <div class="insight-box gold-box" style="margin-top: 20px;">
+      <p><strong>Thesis Summary:</strong> Apple is a <strong>BUY</strong> at current prices. The Services segment ($96B run-rate, 28%+ gross margin) is systematically undervalued relative to pure-play software peers. Combined with accelerating AI-enabled device refresh cycles and $110B+ in annual capital returns, Apple offers a compelling risk-adjusted return profile. Base case price target: $198.</p>
+    </div>
+  </div>
+
+  <!-- TOOLS + CONCEPTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="info-card">
+      <h4>Tools Used</h4>
+      <div class="tools-list">
+        <span class="tool-tag">Microsoft Excel</span>
+        <span class="tool-tag">FactSet (Academic)</span>
+        <span class="tool-tag">SEC EDGAR (10-K)</span>
+        <span class="tool-tag">Bloomberg Academic</span>
+        <span class="tool-tag">DCF Model</span>
+        <span class="tool-tag">Comparable Company Analysis</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h4>Key Finance Concepts</h4>
+      <ul class="concept-list">
+        <li>Discounted Cash Flow (DCF) — intrinsic value derivation</li>
+        <li>EV/EBITDA and P/E — relative valuation multiples</li>
+        <li>Bull / Base / Bear scenario analysis</li>
+        <li>Gross margin expansion and Services mix shift</li>
+        <li>Free Cash Flow (FCF) yield and capital return programs</li>
+        <li>Terminal growth rate and WACC sensitivity</li>
+        <li>Revenue segmentation and unit economics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="content-section">
+    <p class="section-label">Methodology</p>
+    <h2 class="section-title">Process &amp; Approach</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Business &amp; Industry Overview</h4>
+          <p>Mapped Apple's revenue segments (iPhone, Mac, iPad, Wearables, Services), assessed competitive positioning, and identified the key fundamental drivers: Services monetization, emerging markets penetration, and AI hardware integration.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Financial Statement Analysis</h4>
+          <p>Pulled 5 years of income statements, balance sheets, and cash flow statements from the 10-K. Calculated historical growth rates, margin profiles, FCF conversion, and balance sheet efficiency metrics.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Build the DCF Model</h4>
+          <p>Projected 5 years of free cash flow under three scenarios (bull, base, bear). Applied a WACC of 8.8% derived from CAPM with beta of 1.25 and current risk-free rate. Applied a 3% terminal growth rate in base case.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Comparable Company Analysis (Comps)</h4>
+          <p>Selected a peer group of 6 companies: Microsoft, Alphabet, Amazon, Samsung, Meta, and Qualcomm. Screened on EV/EBITDA, P/E (NTM), and FCF yield. Derived an implied peer-based valuation range.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Synthesize Price Target &amp; Rating</h4>
+          <p>Weighted DCF (60%) and comps (40%) to derive a blended price target of $198 in the base case. Established a formal BUY rating with a 12-month investment horizon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DCF / SCENARIO TABLE -->
+  <div class="content-section">
+    <p class="section-label">Valuation</p>
+    <h2 class="section-title">Scenario Analysis &amp; Price Target</h2>
+
+    <div class="table-wrap" style="margin-bottom: 24px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Revenue CAGR</th>
+            <th>Terminal EBITDA Margin</th>
+            <th>WACC</th>
+            <th>Terminal Growth</th>
+            <th>Price Target</th>
+            <th>Upside / Downside</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>&#x1F7E2; Bull Case</strong></td>
+            <td class="mono-cell">9.5%</td>
+            <td class="mono-cell">35%</td>
+            <td class="mono-cell">8.3%</td>
+            <td class="mono-cell">3.5%</td>
+            <td class="mono-cell positive"><strong>$225</strong></td>
+            <td class="mono-cell positive">+23.6%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>&#x1F7E1; Base Case</strong></td>
+            <td class="mono-cell">7.2%</td>
+            <td class="mono-cell">32%</td>
+            <td class="mono-cell">8.8%</td>
+            <td class="mono-cell">3.0%</td>
+            <td class="mono-cell positive"><strong>$198</strong></td>
+            <td class="mono-cell positive">+8.8%</td>
+          </tr>
+          <tr>
+            <td><strong>&#x1F534; Bear Case</strong></td>
+            <td class="mono-cell">3.8%</td>
+            <td class="mono-cell">28%</td>
+            <td class="mono-cell">9.5%</td>
+            <td class="mono-cell">2.0%</td>
+            <td class="mono-cell negative"><strong>$155</strong></td>
+            <td class="mono-cell negative">-14.8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Price Target Range vs. Current Price (~$182)</div>
+      <canvas id="ptChart" style="max-height: 180px;"></canvas>
+    </div>
+  </div>
+
+  <!-- COMPS TABLE -->
+  <div class="content-section">
+    <p class="section-label">Comparable Company Analysis</p>
+    <h2 class="section-title">Peer Valuation Benchmarking</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Ticker</th>
+            <th>EV/EBITDA (NTM)</th>
+            <th>P/E (NTM)</th>
+            <th>FCF Yield</th>
+            <th>Revenue Growth (FY)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>Apple Inc.</strong></td>
+            <td class="mono-cell">AAPL</td>
+            <td class="mono-cell">24.3x</td>
+            <td class="mono-cell">28.4x</td>
+            <td class="mono-cell">3.8%</td>
+            <td class="mono-cell">6.1%</td>
+          </tr>
+          <tr>
+            <td>Microsoft</td>
+            <td class="mono-cell">MSFT</td>
+            <td class="mono-cell">26.1x</td>
+            <td class="mono-cell">31.2x</td>
+            <td class="mono-cell">2.9%</td>
+            <td class="mono-cell">14.7%</td>
+          </tr>
+          <tr>
+            <td>Alphabet</td>
+            <td class="mono-cell">GOOGL</td>
+            <td class="mono-cell">17.4x</td>
+            <td class="mono-cell">21.8x</td>
+            <td class="mono-cell">4.2%</td>
+            <td class="mono-cell">10.2%</td>
+          </tr>
+          <tr>
+            <td>Meta Platforms</td>
+            <td class="mono-cell">META</td>
+            <td class="mono-cell">15.2x</td>
+            <td class="mono-cell">20.3x</td>
+            <td class="mono-cell">4.9%</td>
+            <td class="mono-cell">18.6%</td>
+          </tr>
+          <tr>
+            <td>Amazon</td>
+            <td class="mono-cell">AMZN</td>
+            <td class="mono-cell">19.8x</td>
+            <td class="mono-cell">36.4x</td>
+            <td class="mono-cell">2.1%</td>
+            <td class="mono-cell">11.3%</td>
+          </tr>
+          <tr>
+            <td>Qualcomm</td>
+            <td class="mono-cell">QCOM</td>
+            <td class="mono-cell">14.2x</td>
+            <td class="mono-cell">17.1x</td>
+            <td class="mono-cell">5.3%</td>
+            <td class="mono-cell">9.4%</td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>Peer Median</strong></td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell">18.1x</td>
+            <td class="mono-cell">26.0x</td>
+            <td class="mono-cell">3.9%</td>
+            <td class="mono-cell">11.8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-box" style="margin-top: 16px;">
+      <p><strong>Valuation note:</strong> Apple trades at a premium to peer median (24.3x vs 18.1x EV/EBITDA), which is justified by its unmatched ecosystem lock-in, Services mix shift, and capital return program. The premium is not excessive given 28%+ Services gross margins and an installed base of 2.2 billion active devices.</p>
+    </div>
+  </div>
+
+  <!-- KEY METRICS TABLE -->
+  <div class="content-section">
+    <p class="section-label">Financial Summary</p>
+    <h2 class="section-title">Apple FY2024 Financials (Actual)</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>FY2022</th>
+            <th>FY2023</th>
+            <th>FY2024A</th>
+            <th>YoY Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Total Revenue</td>
+            <td class="mono-cell">$394.3B</td>
+            <td class="mono-cell">$383.3B</td>
+            <td class="mono-cell">$391.0B</td>
+            <td class="mono-cell positive">+2.0%</td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;— iPhone Revenue</td>
+            <td class="mono-cell">$205.5B</td>
+            <td class="mono-cell">$200.6B</td>
+            <td class="mono-cell">$201.2B</td>
+            <td class="mono-cell positive">+0.3%</td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;— Services Revenue</td>
+            <td class="mono-cell">$78.1B</td>
+            <td class="mono-cell">$85.2B</td>
+            <td class="mono-cell">$96.2B</td>
+            <td class="mono-cell positive">+12.9%</td>
+          </tr>
+          <tr>
+            <td>Gross Profit Margin</td>
+            <td class="mono-cell">43.3%</td>
+            <td class="mono-cell">44.1%</td>
+            <td class="mono-cell">46.2%</td>
+            <td class="mono-cell positive">+210 bps</td>
+          </tr>
+          <tr>
+            <td>Operating Income</td>
+            <td class="mono-cell">$119.4B</td>
+            <td class="mono-cell">$114.3B</td>
+            <td class="mono-cell">$123.2B</td>
+            <td class="mono-cell positive">+7.8%</td>
+          </tr>
+          <tr>
+            <td>EPS (diluted)</td>
+            <td class="mono-cell">$6.11</td>
+            <td class="mono-cell">$6.13</td>
+            <td class="mono-cell">$6.42</td>
+            <td class="mono-cell positive">+4.7%</td>
+          </tr>
+          <tr>
+            <td>Free Cash Flow</td>
+            <td class="mono-cell">$111.4B</td>
+            <td class="mono-cell">$99.6B</td>
+            <td class="mono-cell">$108.8B</td>
+            <td class="mono-cell positive">+9.2%</td>
+          </tr>
+          <tr class="total-row">
+            <td>Capital Returned (Buybacks + Dividends)</td>
+            <td class="mono-cell">$89.5B</td>
+            <td class="mono-cell">$105.9B</td>
+            <td class="mono-cell">$112.4B</td>
+            <td class="mono-cell positive">+6.1%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- WHAT I LEARNED / WHY IT MATTERS -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="learned-section">
+        <p class="section-label">What I Learned</p>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 20px;">Key Takeaways</h2>
+        <div class="learned-grid">
+          <div class="learned-item">
+            <h4>DCF Sensitivity</h4>
+            <p>Small changes in WACC (±50 bps) or terminal growth (±50 bps) move the price target by $15–$25. This taught me to never anchor on a single DCF output.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Segment Mix Matters</h4>
+            <p>Apple's gross margin expansion story is almost entirely driven by Services growth (74% gross margin vs 37% for Products). This has huge implications for valuation.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Comps Selection</h4>
+            <p>Choosing the right peer group is subjective but critical. Apple is part hardware, part software platform — no single comp captures the full picture.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Structuring a Pitch</h4>
+            <p>A good stock pitch has a clear, concise thesis, not just numbers. Learning to translate model outputs into a compelling narrative was the hardest part.</p>
+          </div>
+        </div>
+      </div>
+      <div class="matters-section">
+        <p class="section-label">Why It Matters for Finance</p>
+        <h2 class="section-title" style="font-size: 1.3rem; color: var(--navy); margin-bottom: 16px;">Core Skill for Equity Research &amp; AM</h2>
+        <p style="margin-bottom: 14px;">
+          A stock pitch is the foundational deliverable in buy-side portfolio management, equity research, and many S&amp;T interview processes. The ability to form a clear investment view and defend it with rigorous analysis is what separates analysts from order-takers.
+        </p>
+        <p style="margin-bottom: 14px;">
+          This project required synthesizing accounting knowledge (reading financials), corporate finance (DCF), relative valuation (comps), and qualitative judgment (business thesis) — the exact skill stack for roles at asset managers, hedge funds, and equity research desks.
+        </p>
+        <p>
+          Practicing on a well-known company like Apple forced discipline: with so much public information available, the work needs to go beyond surface-level facts to a genuine insight about value.
+        </p>
+        <div class="disclaimer">
+          This is a mock educational stock pitch. All financial data is from public filings. Price targets are for learning purposes only. Not investment advice.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJECT NAV -->
+<div class="project-nav">
+  <div class="project-nav-inner">
+    <div class="project-nav-link">
+      <span class="pnl-label">Previous Project</span>
+      <a href="project-jpmorgan.html" class="pnl-title">&#8592; JPMorgan Earnings Analysis</a>
+    </div>
+    <div class="project-nav-link" style="text-align: right;">
+      <span class="pnl-label">Next Project</span>
+      <a href="project-portfolio.html" class="pnl-title">Mock Portfolio Tracker &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; Educational / Mock Projects &bull; Not investment advice</p>
+</footer>
+
+<script>
+const ctx = document.getElementById('ptChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Bear Case', 'Current Price', 'Base Case (PT)', 'Bull Case'],
+    datasets: [{
+      label: 'Share Price ($)',
+      data: [155, 182, 198, 225],
+      backgroundColor: ['rgba(239,68,68,0.3)', 'rgba(99,132,255,0.3)', 'rgba(16,185,129,0.3)', 'rgba(16,185,129,0.5)'],
+      borderColor: ['rgba(239,68,68,0.8)', 'rgba(99,132,255,0.8)', 'rgba(16,185,129,0.8)', 'rgba(16,185,129,0.9)'],
+      borderWidth: 1.5,
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ` $${ctx.parsed.x}` } }
+    },
+    scales: {
+      x: {
+        min: 130,
+        max: 240,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { family: 'IBM Plex Mono', size: 11 }, callback: v => '$' + v }
+      },
+      y: {
+        grid: { display: false },
+        ticks: { font: { family: 'Inter', size: 12 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Sales ROI Calculator — Ethan Steinmetz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero-inner">
+    <a href="index.html" class="project-hero-back">&#8592; Back to Portfolio</a>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-gray">Sales Finance</span>
+      <span class="badge badge-green">Project 06</span>
+    </div>
+    <h1>Solar Sales<br>ROI Calculator</h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-top:12px; max-width:580px;">
+      A client-facing financial model for commercial solar installations, calculating payback period, IRR, and NPV — including ITC tax credits, MACRS accelerated depreciation, and utility rate escalation.
+    </p>
+    <div class="project-hero-meta">
+      <span>Commercial Solar (100 kW System)</span>
+      <span class="sep">&bull;</span>
+      <span>Excel &amp; Python</span>
+      <span class="sep">&bull;</span>
+      <span>Educational / Mock Sales Tool</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value positive">14.3%</div>
+      <div class="stat-label">Project IRR</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">$47,200</div>
+      <div class="stat-label">NPV (10% Discount Rate)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value gold">6.9 yrs</div>
+      <div class="stat-label">Simple Payback Period</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">$54,000</div>
+      <div class="stat-label">ITC Credit (30%)</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="project-content">
+
+  <!-- OBJECTIVE -->
+  <div class="content-section">
+    <p class="section-label">Objective</p>
+    <h2 class="section-title">Applying Finance to a Real Sales Context</h2>
+    <p class="section-body">
+      This project was designed to demonstrate how core capital budgeting concepts — IRR, NPV, and payback period — apply directly in a sales and advisory context. Solar energy sales is an industry where the financial justification for installation is the central selling proposition: customers buy based on economics, not just environmental preference.
+    </p>
+    <p class="section-body" style="margin-top: 12px;">
+      I built a flexible Excel model (with a Python version for scenario iteration) that takes system size, installation cost, local utility rates, and available incentives as inputs, and outputs a comprehensive return analysis. The model was designed to be used in a client presentation — clear, visual, and credible.
+    </p>
+    <div class="insight-box green-box" style="margin-top: 20px;">
+      <p><strong>Scenario Modeled:</strong> A 100 kW commercial rooftop installation for a light manufacturing facility in the mid-Atlantic U.S. Gross system cost: $180,000. After the 30% ITC federal tax credit, net cost drops to $126,000. With 3% annual utility rate escalation, the project generates a 14.3% IRR and payback in under 7 years.</p>
+    </div>
+  </div>
+
+  <!-- TOOLS + CONCEPTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="info-card">
+      <h4>Tools Used</h4>
+      <div class="tools-list">
+        <span class="tool-tag">Microsoft Excel</span>
+        <span class="tool-tag">Python (NumPy, numpy-financial)</span>
+        <span class="tool-tag">NREL PVWatts Calculator</span>
+        <span class="tool-tag">IRS ITC Guidance (Form 3468)</span>
+        <span class="tool-tag">MACRS Depreciation Schedule</span>
+        <span class="tool-tag">EIA Utility Rate Data</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h4>Key Finance Concepts</h4>
+      <ul class="concept-list">
+        <li>Internal Rate of Return (IRR) — project-level return on invested capital</li>
+        <li>Net Present Value (NPV) — value creation above the required discount rate</li>
+        <li>Simple Payback Period vs. Discounted Payback Period</li>
+        <li>Levelized Cost of Energy (LCOE) — $/kWh over system lifetime</li>
+        <li>ITC (Investment Tax Credit) — 30% federal incentive on system cost</li>
+        <li>MACRS Accelerated Depreciation — 5-year depreciation schedule for solar</li>
+        <li>Utility rate escalation — compounding savings growth over 25 years</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="content-section">
+    <p class="section-label">Methodology</p>
+    <h2 class="section-title">Model Build Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>System Sizing &amp; Energy Production</h4>
+          <p>Used NREL's PVWatts calculator to estimate annual energy production for a 100 kW system in the mid-Atlantic region. Output: approximately 130,000 kWh per year, accounting for panel degradation of 0.5% annually over a 25-year system life.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Cost Model — CapEx &amp; OpEx</h4>
+          <p>CapEx: $1.80/W all-in (panels, inverters, racking, installation, permitting) = $180,000 gross. OpEx: $0.01/W/year in O&amp;M = $1,000/year. Modeled ITC (30% of gross cost = $54,000 credit) and MACRS 5-year depreciation on 85% of net cost.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Revenue / Savings Model</h4>
+          <p>Annual electricity savings = kWh produced × blended utility rate ($0.14/kWh = $18,200 in Year 1). Applied 3% annual utility rate escalation compounding over 25 years. Year 25 annual savings: approximately $36,900.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Tax Benefit Modeling</h4>
+          <p>ITC: $54,000 credit applied in Year 1 against federal tax liability. MACRS depreciation: 85% of net cost ($108,900) depreciated over 5 years on an accelerated basis, generating $40,300+ in tax shield at a 28% effective rate. Total tax benefit: ~$94,300.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>IRR, NPV &amp; Payback Calculation</h4>
+          <p>Built a 25-year cash flow model combining after-tax savings, tax benefits, and O&amp;M costs. Calculated IRR using Excel's IRR() function; NPV using a 10% hurdle rate discount; simple and discounted payback periods. Ran sensitivity on utility escalation rate (1%–5%) and discount rate (8%–14%).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEM SPECS TABLE -->
+  <div class="content-section">
+    <p class="section-label">System Overview</p>
+    <h2 class="section-title">Project Specifications &amp; Assumptions</h2>
+    <div class="two-col" style="margin-bottom: 24px;">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>System Parameter</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>System Size</td><td class="mono-cell">100 kW DC</td></tr>
+            <tr><td>Annual Production (Yr 1)</td><td class="mono-cell">130,000 kWh</td></tr>
+            <tr><td>Panel Degradation Rate</td><td class="mono-cell">0.50% / year</td></tr>
+            <tr><td>System Lifetime</td><td class="mono-cell">25 years</td></tr>
+            <tr><td>Gross System Cost</td><td class="mono-cell">$180,000</td></tr>
+            <tr><td>Cost Per Watt (All-In)</td><td class="mono-cell">$1.80 / W</td></tr>
+            <tr><td>ITC Credit (30%)</td><td class="mono-cell positive">-$54,000</td></tr>
+            <tr><td>Net Cost After ITC</td><td class="mono-cell">$126,000</td></tr>
+            <tr><td>Annual O&amp;M Cost</td><td class="mono-cell">$1,000 / year</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Financial Parameter</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Blended Utility Rate (Yr 1)</td><td class="mono-cell">$0.140 / kWh</td></tr>
+            <tr><td>Utility Rate Escalation</td><td class="mono-cell">3.0% / year</td></tr>
+            <tr><td>Year 1 Electricity Savings</td><td class="mono-cell positive">$18,200</td></tr>
+            <tr><td>Effective Tax Rate</td><td class="mono-cell">28%</td></tr>
+            <tr><td>MACRS Depreciation</td><td class="mono-cell">5-Year Schedule</td></tr>
+            <tr><td>Discount Rate (NPV)</td><td class="mono-cell">10%</td></tr>
+            <tr><td>Simple Payback Period</td><td class="mono-cell gold">6.9 years</td></tr>
+            <tr><td>Discounted Payback Period</td><td class="mono-cell">9.2 years</td></tr>
+            <tr><td>25-Year Lifetime Savings</td><td class="mono-cell positive">$611,400</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASH FLOW TABLE -->
+  <div class="content-section">
+    <p class="section-label">Cash Flow Analysis</p>
+    <h2 class="section-title">10-Year After-Tax Cash Flow Summary</h2>
+    <div class="table-wrap" style="margin-bottom: 24px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Energy Savings</th>
+            <th>Tax Benefit (ITC + MACRS)</th>
+            <th>O&amp;M Cost</th>
+            <th>Net Cash Flow</th>
+            <th>Cumulative CF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>0 (Install)</strong></td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell negative">-$126,000</td>
+            <td class="mono-cell negative">-$126,000</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="mono-cell positive">$18,200</td>
+            <td class="mono-cell positive">$66,936</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$84,136</td>
+            <td class="mono-cell negative">-$41,864</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="mono-cell positive">$18,746</td>
+            <td class="mono-cell positive">$12,748</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$30,494</td>
+            <td class="mono-cell negative">-$11,370</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="mono-cell positive">$19,308</td>
+            <td class="mono-cell positive">$7,649</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$25,957</td>
+            <td class="mono-cell positive">$14,587</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>&#x2714; Payback Yr ~2.4</strong></td>
+            <td colspan="4" style="color: var(--green-dark); font-weight: 600;">Simple payback occurs during Year 3 (after tax benefits)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td class="mono-cell positive">$19,887</td>
+            <td class="mono-cell positive">$7,649</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$26,536</td>
+            <td class="mono-cell positive">$41,123</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td class="mono-cell positive">$20,484</td>
+            <td class="mono-cell positive">$3,824</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$23,308</td>
+            <td class="mono-cell positive">$64,431</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td class="mono-cell positive">$21,099</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$20,099</td>
+            <td class="mono-cell positive">$84,530</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td class="mono-cell positive">$21,732</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$20,732</td>
+            <td class="mono-cell positive">$105,262</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td class="mono-cell positive">$22,384</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$21,384</td>
+            <td class="mono-cell positive">$126,646</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td class="mono-cell positive">$23,055</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$22,055</td>
+            <td class="mono-cell positive">$148,701</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td class="mono-cell positive">$23,747</td>
+            <td class="mono-cell">—</td>
+            <td class="mono-cell negative">-$1,000</td>
+            <td class="mono-cell positive">$22,747</td>
+            <td class="mono-cell positive">$171,448</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="content-section">
+    <div class="chart-wrap">
+      <div class="chart-title">Cumulative Cash Flow Over 10 Years ($)</div>
+      <canvas id="cfChart" style="max-height: 280px;"></canvas>
+    </div>
+  </div>
+
+  <!-- SENSITIVITY TABLE -->
+  <div class="content-section">
+    <p class="section-label">Sensitivity Analysis</p>
+    <h2 class="section-title">IRR vs. Utility Rate Escalation &amp; Discount Rate</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Utility Escalation \ Discount Rate</th>
+            <th>8%</th>
+            <th>10% (Base)</th>
+            <th>12%</th>
+            <th>14%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1% Escalation</strong></td>
+            <td class="mono-cell">NPV: $18.4K</td>
+            <td class="mono-cell">NPV: -$6.2K</td>
+            <td class="mono-cell negative">NPV: -$24.1K</td>
+            <td class="mono-cell negative">NPV: -$37.8K</td>
+          </tr>
+          <tr>
+            <td><strong>2% Escalation</strong></td>
+            <td class="mono-cell positive">NPV: $34.2K</td>
+            <td class="mono-cell">NPV: $12.8K</td>
+            <td class="mono-cell">NPV: -$4.7K</td>
+            <td class="mono-cell negative">NPV: -$19.4K</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>3% Escalation (Base)</strong></td>
+            <td class="mono-cell positive">NPV: $71.3K</td>
+            <td class="mono-cell positive"><strong>NPV: $47.2K</strong></td>
+            <td class="mono-cell positive">NPV: $26.8K</td>
+            <td class="mono-cell">NPV: $8.9K</td>
+          </tr>
+          <tr>
+            <td><strong>4% Escalation</strong></td>
+            <td class="mono-cell positive">NPV: $112.4K</td>
+            <td class="mono-cell positive">NPV: $84.1K</td>
+            <td class="mono-cell positive">NPV: $59.7K</td>
+            <td class="mono-cell positive">NPV: $38.6K</td>
+          </tr>
+          <tr>
+            <td><strong>5% Escalation</strong></td>
+            <td class="mono-cell positive">NPV: $158.2K</td>
+            <td class="mono-cell positive">NPV: $124.7K</td>
+            <td class="mono-cell positive">NPV: $95.3K</td>
+            <td class="mono-cell positive">NPV: $69.4K</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight-box green-box" style="margin-top: 16px;">
+      <p><strong>Sales Insight:</strong> Utility rate escalation is the most powerful driver of project economics. In markets where electricity rates are rising faster than 2–3% annually — increasingly common given grid modernization and carbon pricing trends — the ROI case becomes even stronger. This is the key variable to research before client presentations.</p>
+    </div>
+  </div>
+
+  <!-- WHAT I LEARNED / WHY IT MATTERS -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="learned-section">
+        <p class="section-label">What I Learned</p>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 20px;">Key Takeaways</h2>
+        <div class="learned-grid">
+          <div class="learned-item">
+            <h4>IRR vs. NPV in Practice</h4>
+            <p>IRR is intuitive for sales conversations ("you'll earn 14% on this investment"), but NPV tells you dollar value created. Both matter depending on the audience.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Tax Policy Drives Investment</h4>
+            <p>The ITC and MACRS depreciation are worth more than the Year 1 energy savings in this model. Understanding how tax incentives shape capital allocation is core finance literacy.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Finance as a Sales Tool</h4>
+            <p>A well-structured ROI model closes deals. Clients trust quantified payback and IRR more than qualitative pitches — financial fluency directly enables commercial performance.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Sensitivity Is the Story</h4>
+            <p>Showing clients how outcomes change under different utility rate assumptions builds credibility and addresses objections proactively. The sensitivity table is as important as the headline number.</p>
+          </div>
+        </div>
+      </div>
+      <div class="matters-section">
+        <p class="section-label">Why It Matters for Finance</p>
+        <h2 class="section-title" style="font-size: 1.3rem; color: var(--navy); margin-bottom: 16px;">Applied Capital Budgeting</h2>
+        <p style="margin-bottom: 14px;">
+          IRR and NPV are not just academic metrics — they are the primary framework through which companies, private equity firms, project finance teams, and individual investors evaluate capital expenditures. Building a working model that applies these concepts to a tangible business problem demonstrates practical proficiency, not just textbook knowledge.
+        </p>
+        <p style="margin-bottom: 14px;">
+          For S&amp;T roles, understanding project finance mechanics is relevant to structured products, green bonds, and infrastructure deals. For corporate finance and banking roles, capital budgeting analysis is a routine deliverable in M&amp;A diligence and project advisory.
+        </p>
+        <p>
+          This project also demonstrates the commercial instinct needed for client-facing roles: translating complex financial analysis into clear, persuasive client deliverables — a skill that differentiates strong analysts across all finance disciplines.
+        </p>
+        <div class="disclaimer">
+          This is a mock educational model. All data is illustrative and based on public utility rates and industry cost benchmarks. Not financial, legal, or tax advice.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJECT NAV -->
+<div class="project-nav">
+  <div class="project-nav-inner">
+    <div class="project-nav-link">
+      <span class="pnl-label">Previous Project</span>
+      <a href="project-dcf.html" class="pnl-title">&#8592; DCF Valuation Model</a>
+    </div>
+    <div class="project-nav-link" style="text-align: right;">
+      <span class="pnl-label">Back to Start</span>
+      <a href="index.html" class="pnl-title">Portfolio Home &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; Educational / Mock Projects &bull; Not investment advice</p>
+</footer>
+
+<script>
+const years = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const cumCF = [-126000, -41864, -11370, 14587, 41123, 64431, 84530, 105262, 126646, 148701, 171448];
+
+new Chart(document.getElementById('cfChart').getContext('2d'), {
+  type: 'line',
+  data: {
+    labels: years.map(y => 'Year ' + y),
+    datasets: [
+      {
+        label: 'Cumulative Cash Flow ($)',
+        data: cumCF,
+        borderColor: 'rgba(16,185,129,0.9)',
+        backgroundColor: 'rgba(16,185,129,0.08)',
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: cumCF.map(v => v >= 0 ? 'rgba(16,185,129,0.9)' : 'rgba(239,68,68,0.9)'),
+        fill: true,
+        tension: 0.3
+      },
+      {
+        label: 'Break-Even ($0)',
+        data: years.map(() => 0),
+        borderColor: 'rgba(100,116,139,0.4)',
+        borderWidth: 1.5,
+        borderDash: [6, 4],
+        pointRadius: 0,
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { font: { family: 'Inter', size: 12 }, padding: 16 } },
+      tooltip: {
+        callbacks: {
+          label: c => ` ${c.dataset.label}: $${c.parsed.y.toLocaleString()}`
+        }
+      }
+    },
+    scales: {
+      y: {
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: {
+          font: { family: 'IBM Plex Mono', size: 11 },
+          callback: v => '$' + (v / 1000).toFixed(0) + 'K'
+        }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { family: 'Inter', size: 11 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

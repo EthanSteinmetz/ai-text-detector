@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JPMorgan Earnings Analysis — Ethan Steinmetz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="project-hero-inner">
+    <a href="index.html" class="project-hero-back">&#8592; Back to Portfolio</a>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-blue">Equity Research</span>
+      <span class="badge badge-gray">Project 01</span>
+    </div>
+    <h1>JPMorgan Chase Q3 2024<br>Earnings Analysis</h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; margin-top:12px; max-width:560px;">
+      A systematic breakdown of JPMorgan's Q3 2024 earnings release, comparing reported results against consensus estimates and analyzing segment-level performance.
+    </p>
+    <div class="project-hero-meta">
+      <span>October 2024</span>
+      <span class="sep">&bull;</span>
+      <span>Excel &amp; Python</span>
+      <span class="sep">&bull;</span>
+      <span>Educational / Mock Analysis</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-value positive">+$0.38</div>
+      <div class="stat-label">EPS Beat</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value positive">+$1.4B</div>
+      <div class="stat-label">Revenue Beat</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value gold">$23.5B</div>
+      <div class="stat-label">Net Interest Income</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">17%</div>
+      <div class="stat-label">Return on Equity</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="project-content">
+
+  <!-- OBJECTIVE -->
+  <div class="content-section">
+    <p class="section-label">Objective</p>
+    <h2 class="section-title">What This Project Set Out to Do</h2>
+    <p class="section-body">
+      The goal of this project was to replicate the earnings analysis workflow used by equity research analysts and S&amp;T professionals on earnings day. When a major bank like JPMorgan reports quarterly results, analysts must quickly synthesize a large volume of data — comparing actual results to consensus estimates, assessing segment performance, and distilling forward guidance into actionable takeaways.
+    </p>
+    <p class="section-body" style="margin-top: 12px;">
+      Using JPMorgan's publicly available Q3 2024 earnings press release and the 10-Q filed with the SEC, I built a structured earnings model in Excel and Python to organize, analyze, and present the key findings in the format a trading desk would expect.
+    </p>
+  </div>
+
+  <!-- TOOLS + CONCEPTS -->
+  <div class="two-col" style="margin-bottom: 48px;">
+    <div class="info-card">
+      <h4>Tools Used</h4>
+      <div class="tools-list">
+        <span class="tool-tag">Microsoft Excel</span>
+        <span class="tool-tag">Python (pandas)</span>
+        <span class="tool-tag">SEC EDGAR</span>
+        <span class="tool-tag">Bloomberg Terminal (Academic)</span>
+        <span class="tool-tag">JPMorgan 10-Q</span>
+        <span class="tool-tag">Earnings Press Release</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h4>Key Finance Concepts</h4>
+      <ul class="concept-list">
+        <li>Earnings Per Share (EPS) — Actual vs. Consensus Estimate</li>
+        <li>Net Interest Income (NII) and Net Interest Margin (NIM)</li>
+        <li>Return on Equity (ROE) and Return on Tangible Common Equity (ROTCE)</li>
+        <li>CET1 Capital Ratio — Basel III regulatory measure</li>
+        <li>Investment Banking (IB) fee revenue — advisory, ECM, DCM</li>
+        <li>Credit provisions — loan loss reserves and charge-off rates</li>
+        <li>Forward guidance and analyst consensus revision dynamics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="content-section">
+    <p class="section-label">Methodology</p>
+    <h2 class="section-title">Process &amp; Approach</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Source the Data</h4>
+          <p>Downloaded the Q3 2024 earnings press release from JPMorgan's investor relations page and the 10-Q from SEC EDGAR. Compiled pre-earnings consensus estimates from FactSet (academic simulation) for EPS, revenue, NII, and key segment metrics.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Build the Earnings Model</h4>
+          <p>Structured an Excel model with three tabs: (1) Beat/Miss Summary — actual vs. estimate for all headline metrics; (2) Segment Breakdown — Consumer &amp; Community Banking, CIB, Commercial Banking, Asset &amp; Wealth Management; (3) YoY/QoQ trend analysis for key KPIs.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Analyze Segment Performance</h4>
+          <p>Decomposed total revenue and profit by segment to identify which business lines drove the beat. CIB investment banking fees, NII compression in consumer, and AWM AUM flows were the three focal areas for assessment.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Assess Forward Guidance</h4>
+          <p>Extracted management's NII guidance update for full-year 2024 and compared to prior guidance. Evaluated implications for consensus estimates and modeled the likely direction of analyst estimate revisions.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h4>Write the Earnings Summary</h4>
+          <p>Produced a one-page earnings summary in the format used by S&amp;T desks: headline beat/miss, three key positives, two key risks, and a forward view — all in under 300 words.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA TABLE -->
+  <div class="content-section">
+    <p class="section-label">Sample Data</p>
+    <h2 class="section-title">Q3 2024 Beat / Miss Summary</h2>
+
+    <div class="table-wrap" style="margin-bottom: 24px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Consensus Estimate</th>
+            <th>Reported Actual</th>
+            <th>Beat / Miss</th>
+            <th>% Surprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td><strong>EPS (diluted)</strong></td>
+            <td class="mono-cell">$3.99</td>
+            <td class="mono-cell">$4.37</td>
+            <td class="mono-cell positive">+$0.38</td>
+            <td class="mono-cell positive">+9.5%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Total Net Revenue</strong></td>
+            <td class="mono-cell">$41.9B</td>
+            <td class="mono-cell">$43.3B</td>
+            <td class="mono-cell positive">+$1.4B</td>
+            <td class="mono-cell positive">+3.3%</td>
+          </tr>
+          <tr>
+            <td>Net Interest Income</td>
+            <td class="mono-cell">$22.8B</td>
+            <td class="mono-cell">$23.5B</td>
+            <td class="mono-cell positive">+$0.7B</td>
+            <td class="mono-cell positive">+3.1%</td>
+          </tr>
+          <tr>
+            <td>Non-Interest Revenue</td>
+            <td class="mono-cell">$19.1B</td>
+            <td class="mono-cell">$19.8B</td>
+            <td class="mono-cell positive">+$0.7B</td>
+            <td class="mono-cell positive">+3.7%</td>
+          </tr>
+          <tr>
+            <td>IB Fee Revenue</td>
+            <td class="mono-cell">$2.0B</td>
+            <td class="mono-cell">$2.3B</td>
+            <td class="mono-cell positive">+$0.3B</td>
+            <td class="mono-cell positive">+15.0%</td>
+          </tr>
+          <tr>
+            <td>Credit Loss Provision</td>
+            <td class="mono-cell">$3.1B</td>
+            <td class="mono-cell">$3.1B</td>
+            <td class="mono-cell">In Line</td>
+            <td class="mono-cell">0.0%</td>
+          </tr>
+          <tr>
+            <td>Noninterest Expense</td>
+            <td class="mono-cell">$22.6B</td>
+            <td class="mono-cell">$22.6B</td>
+            <td class="mono-cell">In Line</td>
+            <td class="mono-cell">0.0%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Actual vs. Estimate — Key Metrics ($ Billions)</div>
+      <canvas id="earningsChart" style="max-height: 300px;"></canvas>
+    </div>
+  </div>
+
+  <!-- SEGMENT TABLE -->
+  <div class="content-section">
+    <p class="section-label">Segment Analysis</p>
+    <h2 class="section-title">Business Line Breakdown</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Net Revenue</th>
+            <th>YoY Change</th>
+            <th>Net Income</th>
+            <th>ROE</th>
+            <th>Key Driver</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Consumer &amp; Community Banking</strong></td>
+            <td class="mono-cell">$17.8B</td>
+            <td class="mono-cell positive">+3%</td>
+            <td class="mono-cell">$4.4B</td>
+            <td class="mono-cell">26%</td>
+            <td>NII growth from rate environment</td>
+          </tr>
+          <tr>
+            <td><strong>Corporate &amp; Investment Bank</strong></td>
+            <td class="mono-cell">$17.0B</td>
+            <td class="mono-cell positive">+8%</td>
+            <td class="mono-cell">$5.7B</td>
+            <td class="mono-cell">15%</td>
+            <td>IB fee recovery, strong FICC</td>
+          </tr>
+          <tr>
+            <td><strong>Commercial Banking</strong></td>
+            <td class="mono-cell">$3.9B</td>
+            <td class="mono-cell positive">+2%</td>
+            <td class="mono-cell">$1.3B</td>
+            <td class="mono-cell">18%</td>
+            <td>Steady loan growth</td>
+          </tr>
+          <tr>
+            <td><strong>Asset &amp; Wealth Management</strong></td>
+            <td class="mono-cell">$5.4B</td>
+            <td class="mono-cell positive">+9%</td>
+            <td class="mono-cell">$1.3B</td>
+            <td class="mono-cell">27%</td>
+            <td>Market appreciation, AUM flows</td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>Total (Firm-wide)</strong></td>
+            <td class="mono-cell">$43.3B</td>
+            <td class="mono-cell positive">+5%</td>
+            <td class="mono-cell">$12.9B</td>
+            <td class="mono-cell">17%</td>
+            <td>Broad-based beat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- KEY FINDINGS -->
+  <div class="content-section">
+    <p class="section-label">Key Findings</p>
+    <h2 class="section-title">Three Positives, Two Risks</h2>
+    <div class="findings-grid">
+      <div class="finding-card green-accent">
+        <h4>Positive #1</h4>
+        <p>IB fee revenue surged 15% above expectations, driven by a rebound in ECM and advisory activity — signaling a broader capital markets recovery.</p>
+      </div>
+      <div class="finding-card green-accent">
+        <h4>Positive #2</h4>
+        <p>NII exceeded estimates despite margin compression fears. Full-year NII guidance raised by $500M, implying continued deposit repricing tailwinds.</p>
+      </div>
+      <div class="finding-card green-accent">
+        <h4>Positive #3</h4>
+        <p>CET1 capital ratio of 15.3% remains well above regulatory minimums, providing significant flexibility for buybacks and capital return.</p>
+      </div>
+      <div class="finding-card red-accent">
+        <h4>Risk #1</h4>
+        <p>Consumer credit quality is deteriorating at the margin. Net charge-off rate in cards rose to 3.74%, above Q2 levels — worth monitoring into 2025.</p>
+      </div>
+      <div class="finding-card red-accent">
+        <h4>Risk #2</h4>
+        <p>Noninterest expense guidance implies limited operating leverage in 2025 as the firm continues heavy investment in technology and headcount.</p>
+      </div>
+      <div class="finding-card" style="border-left-color: var(--gold);">
+        <h4>Forward View</h4>
+        <p>Expect consensus EPS estimates for FY2024 to move ~3–5% higher. Rate-cut trajectory and IB pipeline are the key variables to watch in Q4.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT I LEARNED / WHY IT MATTERS -->
+  <div class="content-section">
+    <div class="two-col">
+      <div class="learned-section">
+        <p class="section-label">What I Learned</p>
+        <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 20px;">Key Takeaways</h2>
+        <div class="learned-grid">
+          <div class="learned-item">
+            <h4>Bank-Specific Metrics</h4>
+            <p>NII, NIM, CET1, ROTCE — these aren't in standard accounting courses. I learned what each measures and why they drive bank valuations.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Estimate Dynamics</h4>
+            <p>A beat isn't just about the number — the quality of the beat (NII vs. fee income) and guidance revisions often matter more than the headline surprise.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Speed &amp; Synthesis</h4>
+            <p>Earnings analysis requires quickly extracting signal from noise. I practiced condensing 80+ pages of filings into a structured one-pager.</p>
+          </div>
+          <div class="learned-item">
+            <h4>Segment Decomposition</h4>
+            <p>Understanding which business lines drove results is essential to assessing earnings quality and forecasting future quarters.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="matters-section">
+        <p class="section-label">Why It Matters for Finance</p>
+        <h2 class="section-title" style="font-size: 1.3rem; color: var(--navy); margin-bottom: 16px;">Relevance to S&amp;T and Equity Research</h2>
+        <p style="margin-bottom: 14px;">
+          On earnings day, S&amp;T desks and research analysts need to process results in real time — often within minutes of the press release hitting. The ability to quickly parse a large bank's earnings, identify the key beat drivers, and form a view on the stock's near-term reaction is a core professional skill.
+        </p>
+        <p style="margin-bottom: 14px;">
+          This project mimics exactly that workflow. Understanding JPMorgan's business model — how it earns money across consumer, wholesale, and wealth management — provides a foundation for analyzing any large financial institution.
+        </p>
+        <p>
+          For roles in equity research (financial institutions), S&amp;T (rates and credit), or investment banking (FIG), this type of analysis is a daily deliverable.
+        </p>
+        <div class="disclaimer">
+          This is a mock educational analysis. All data is sourced from public filings for learning purposes only. Not investment advice.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROJECT NAV -->
+<div class="project-nav">
+  <div class="project-nav-inner">
+    <div></div>
+    <div class="project-nav-link" style="text-align: right;">
+      <span class="pnl-label">Next Project</span>
+      <a href="project-apple.html" class="pnl-title">Apple Stock Pitch &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; Educational / Mock Projects &bull; Not investment advice</p>
+</footer>
+
+<script>
+const ctx = document.getElementById('earningsChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['EPS ($)', 'Total Revenue ($B)', 'Net Interest Income ($B)', 'IB Fees ($B)'],
+    datasets: [
+      {
+        label: 'Consensus Estimate',
+        data: [3.99, 41.9, 22.8, 2.0],
+        backgroundColor: 'rgba(99, 132, 255, 0.25)',
+        borderColor: 'rgba(99, 132, 255, 0.8)',
+        borderWidth: 1.5,
+        borderRadius: 4,
+      },
+      {
+        label: 'Reported Actual',
+        data: [4.37, 43.3, 23.5, 2.3],
+        backgroundColor: 'rgba(16, 185, 129, 0.3)',
+        borderColor: 'rgba(16, 185, 129, 0.8)',
+        borderWidth: 1.5,
+        borderRadius: 4,
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top', labels: { font: { family: 'Inter', size: 12 }, padding: 16 } },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}`
+        }
+      }
+    },
+    scales: {
+      y: {
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        ticks: { font: { family: 'IBM Plex Mono', size: 11 } }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { family: 'Inter', size: 12 } }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

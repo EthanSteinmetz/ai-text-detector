@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan Steinmetz — Finance Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Ethan <span>Steinmetz</span></a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">&#9679; Finance & Markets Portfolio</div>
+    <h1>Analyzing Markets.<br>Building <span>Real Skills.</span></h1>
+    <p class="hero-subtitle">
+      A collection of mock finance projects exploring equity research, financial modeling, portfolio management, and capital markets strategy. Built to develop analyst-level thinking.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects &#8594;</a>
+      <a href="#about" class="btn btn-outline">About Me</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">6</span>
+        <div class="hero-stat-label">Projects</div>
+      </div>
+      <div>
+        <span class="hero-stat-num">4</span>
+        <div class="hero-stat-label">Asset Classes</div>
+      </div>
+      <div>
+        <span class="hero-stat-num">DCF</span>
+        <div class="hero-stat-label">Valuation Models</div>
+      </div>
+      <div>
+        <span class="hero-stat-num">S&amp;T</span>
+        <div class="hero-stat-label">Focus Area</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div style="margin-bottom: 40px;">
+      <p class="section-label">Work Samples</p>
+      <h2 class="section-title">Finance Projects</h2>
+      <p style="max-width: 520px; margin-top: 8px; font-size: 0.95rem;">
+        Each project simulates real analyst work using public data, financial modeling techniques, and industry-standard frameworks. Built for learning — presented with professional rigor.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Card 1 -->
+      <div class="project-card">
+        <div class="card-top">
+          <span class="badge badge-blue">Equity Research</span>
+          <span class="card-number">01</span>
+        </div>
+        <h3 class="card-title">JPMorgan Chase Q3 2024 Earnings Analysis</h3>
+        <p class="card-desc">
+          Parsed JPMorgan's Q3 earnings release, modeled beat/miss scenarios against consensus estimates, and assessed forward guidance implications across key business segments.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Python</span>
+          <span class="tag">Fundamental Analysis</span>
+          <span class="tag">10-Q</span>
+        </div>
+        <a href="project-jpmorgan.html" class="card-link">View Analysis &#8594;</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card">
+        <div class="card-top">
+          <span class="badge badge-gold">Stock Pitch</span>
+          <span class="card-number">02</span>
+        </div>
+        <h3 class="card-title">Apple Inc. (AAPL) Buy-Side Stock Pitch</h3>
+        <p class="card-desc">
+          Full equity research note with a DCF, comparable company analysis, and a $198 price target. Bull, base, and bear scenarios modeled across key financial drivers.
+        </p>
+        <div class="card-tags">
+          <span class="tag">DCF</span>
+          <span class="tag">Comps</span>
+          <span class="tag">Excel</span>
+          <span class="tag">10-K</span>
+        </div>
+        <a href="project-apple.html" class="card-link">View Pitch &#8594;</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card">
+        <div class="card-top">
+          <span class="badge badge-green">Portfolio Management</span>
+          <span class="card-number">03</span>
+        </div>
+        <h3 class="card-title">Mock $10,000 Portfolio Tracker</h3>
+        <p class="card-desc">
+          Simulated management of a $10,000 equity and fixed income portfolio across 8 positions, with performance attribution, Sharpe ratio calculation, and S&amp;P 500 benchmark comparison.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Risk Analysis</span>
+          <span class="tag">Yahoo Finance API</span>
+        </div>
+        <a href="project-portfolio.html" class="card-link">View Portfolio &#8594;</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="project-card">
+        <div class="card-top">
+          <span class="badge badge-purple">Macro Strategy</span>
+          <span class="card-number">04</span>
+        </div>
+        <h3 class="card-title">Market Strategy Dashboard</h3>
+        <p class="card-desc">
+          Built a macro strategy dashboard tracking yield curve shape, credit spreads, VIX, and sector performance to generate actionable risk-on/risk-off positioning signals.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Macro Analysis</span>
+          <span class="tag">Plotly</span>
+          <span class="tag">Fixed Income</span>
+        </div>
+        <a href="project-market.html" class="card-link">View Dashboard &#8594;</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="project-card">
+        <div class="card-top">
+          <span class="badge badge-red">Valuation</span>
+          <span class="card-number">05</span>
+        </div>
+        <h3 class="card-title">Microsoft DCF Valuation Model</h3>
+        <p class="card-desc">
+          Three-stage discounted cash flow model for Microsoft with full WACC derivation, terminal value sensitivity tables, and an enterprise-to-equity value bridge.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Financial Modeling</span>
+          <span class="tag">WACC</span>
+          <span class="tag">SEC EDGAR</span>
+        </div>
+        <a href="project-dcf.html" class="card-link">View Model &#8594;</a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="project-card">
+        <div class="card-top">
+          <span class="badge badge-gray">Sales Finance</span>
+          <span class="card-number">06</span>
+        </div>
+        <h3 class="card-title">Solar Sales ROI Calculator</h3>
+        <p class="card-desc">
+          Client-facing financial model calculating payback period, IRR, and NPV for commercial solar installations, including ITC tax credits, MACRS depreciation, and utility escalation rates.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Excel</span>
+          <span class="tag">IRR / NPV</span>
+          <span class="tag">Capital Budgeting</span>
+          <span class="tag">Python</span>
+        </div>
+        <a href="project-solar.html" class="card-link">View Calculator &#8594;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about" style="background: var(--bg-card); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="about-section" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+      <div class="two-col" style="gap: 64px; align-items: start;">
+        <div>
+          <p class="section-label">About</p>
+          <h2 style="margin-bottom: 16px;">Finance Student &amp; Markets Enthusiast</h2>
+          <p style="margin-bottom: 16px;">
+            I'm a finance student with a strong interest in Sales &amp; Trading, equity research, and capital markets. These projects represent my effort to bridge classroom concepts with real-world analytical practice.
+          </p>
+          <p style="margin-bottom: 24px;">
+            Each project is built using publicly available data and industry-standard methodologies — from earnings analysis and DCF modeling to portfolio risk metrics and macro strategy. The goal is analyst-level thinking, not just academic exercises.
+          </p>
+          <div class="insight-box">
+            <p><strong>Focus Areas:</strong> Sales &amp; Trading &bull; Equity Research &bull; Portfolio Management &bull; Financial Modeling &bull; Capital Markets</p>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 20px; color: var(--text);">Tools &amp; Skills</h3>
+          <div class="skills-list">
+            <span class="skill-pill">Excel / Financial Modeling</span>
+            <span class="skill-pill">Python (pandas, NumPy)</span>
+            <span class="skill-pill">DCF Valuation</span>
+            <span class="skill-pill">Comparable Company Analysis</span>
+            <span class="skill-pill">Portfolio Risk Metrics</span>
+            <span class="skill-pill">Bloomberg (academic)</span>
+            <span class="skill-pill">SEC EDGAR</span>
+            <span class="skill-pill">Yield Curve Analysis</span>
+            <span class="skill-pill">Earnings Analysis</span>
+            <span class="skill-pill">IRR / NPV / WACC</span>
+            <span class="skill-pill">Capital Budgeting</span>
+            <span class="skill-pill">Sector Rotation</span>
+            <span class="skill-pill">Options Basics</span>
+            <span class="skill-pill">Fixed Income Fundamentals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Ethan Steinmetz &mdash; Finance Portfolio &bull; All projects are educational and mock in nature &bull; Not investment advice</p>
+</footer>
+
+</body>
+</html>
